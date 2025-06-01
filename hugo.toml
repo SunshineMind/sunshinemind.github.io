@@ -1,0 +1,8 @@
+baseURL = 'https://smjx.cc/'
+languageCode = 'en-us'
+title = 'SMJX Blog'
+theme = 'papermod'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
