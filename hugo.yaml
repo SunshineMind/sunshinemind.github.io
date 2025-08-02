@@ -2,3 +2,7 @@ baseURL: http://sunshinemind.github.io/
 languageCode: zh-cn
 title: SmJx's Blog
 theme: ["PaperMod"]
+
+caches:
+  images:
+    dir: :cacheDir/images
