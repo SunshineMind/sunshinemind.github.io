@@ -1,8 +1,58 @@
-baseURL: http://sunshinemind.github.io/
-languageCode: zh-cn
+baseURL: https://smjx.cc/
+languageCode: zh
+defaultContentLanguage: zh
 title: SmJx's Blog
 theme: ["PaperMod"]
 
 caches:
   images:
     dir: :cacheDir/images
+
+params:
+  defaultTheme: auto
+  dateFormat: "2006-01-02"
+  author: Jason
+  showBreadCrumbs: true
+  showCodeCopyButtons: true
+  showReadingTime: true
+
+  homeInfoParams:
+    Title: Hi there
+    Content: 热爱但懒惰的全不栈开发，如果博客对你有帮助，十分荣幸
+
+  socialIcons: # optional
+    # - name: "email"
+    #   url: "kchangnb#gmail.com"
+    - name: "github"
+      url: "https://github.com/SunshineMind/"
+    - name: "steam"
+      url: "https://steamcommunity.com/id/SunshineMind/"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 10
+    - identifier: categories
+      name: 类别
+      url: /categories/
+      weight: 20
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 30
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 40
+    # - identifier: aboutme
+    #   name: 关于我
+    #   url: /aboutme/
+    #   weight: 50
