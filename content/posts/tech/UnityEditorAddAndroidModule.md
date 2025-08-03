@@ -1,6 +1,6 @@
 ---
 date: '2025-08-03T16:36:18+08:00'
-draft: true
+draft: false
 title: 'Unity 编辑器添加安卓模块无法找到 JDK SDK NDK 问题'
 lastmod: 2025-08-03T16:36:18+08:00
 
