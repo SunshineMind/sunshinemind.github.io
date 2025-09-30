@@ -36,3 +36,13 @@ brew install android-platform-tools
 
 ### 连接设备
 
+1. 打开手机开发者模式：我的是 Xiaomi HyperOS 1.0 系统，进入 设置->我的设备->全部参数与信息，多次点击OS版本选项，即可开启开发者模式。其他Android系统方法类似。
+2. 打开无线调试：进入 设置->更多设置开发者选项无线调试，打开无线调试开关。
+3. 配对：手机点击 使用配对码配对设备。在电脑终端中执行 ```adb pair IP:Port```，执行后，输入手机上的六位配对码即可配对。
+   
+   ⚠️注意，电脑与手机必须处于同一网络下，配对IP与配对端口显示在点击 使用配对码配对设备 后的弹窗里。(配对成功后，手机已配对的设备中会多出一个设备选项)
+4. 连接：电脑终端执行```adb connect IP:Port```连接手机。执行```adb devices```即可查看所有设备。
+
+### 文件操作
+
+1. 确定一下目标文件位置，经过查找，发现路径在```/sdcard/Android/data/com.dragonli.projectsnow.lhm/files/localization.txt```

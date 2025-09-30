@@ -28,6 +28,11 @@ params:
     - name: "steam"
       url: "https://steamcommunity.com/profiles/76561198273672327/"
 
+  busuanzi:
+    enable: true
+    # hideFooter: true  # 禁用默认页脚
+
+
 outputs:
   home:
     - HTML
