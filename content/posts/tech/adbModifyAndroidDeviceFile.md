@@ -1,8 +1,8 @@
 ---
 date: '2025-09-29T21:48:21+08:00'
-draft: true
-title: '在 MacOS 上使用 ADB 修改安卓设备上的文件'
-lastmod: 2025-09-29T21:48:21+08:00
+draft: false
+title: '使用 ADB 修改安卓设备上的文件'
+lastmod: 2025-11-18T16:40:00+08:00
 
 categories:
 - 没啥技术含量文章
@@ -23,16 +23,35 @@ tags:
 
 貌似可行，开干。
 
+提醒：这篇内容非常入门，且严格意义上不算修改。
 
 ### 安装ADB
 
-系统中已经安装了Brew，安装ADB非常方便，执行
+- MacOS
 
-```
-brew install android-platform-tools
-```
+    系统中已经安装了Brew，安装ADB非常方便，执行
 
-等待安装结束即可。
+    ```
+    brew install android-platform-tools
+    ```
+
+    等待安装结束即可。
+
+- Windows
+
+    具体操作请自行搜索，大概的思路是下载、解压到合适位置、自行决定是否设置环境变量。
+
+    在[官网](https://developer.android.com/tools/releases/platform-tools?hl=zh-cn)下载最新版压缩包。
+
+    解压到```C:\User\用户名\AppData\Local\Programs\platform_tools```，拿这个位置举例。
+
+    将刚才的路径添加到系统环境变量Path中。
+
+    在 PowerShell 中执行 ```adb --version```，验证是否成功，出现了adb版本、安装路径等即为成功。
+
+- Linux 发行版
+
+    使用Linux发行版的用户，就不用我这种入门级别的文章了吧😂。
 
 ### 连接设备
 
@@ -40,9 +59,50 @@ brew install android-platform-tools
 2. 打开无线调试：进入 设置->更多设置开发者选项无线调试，打开无线调试开关。
 3. 配对：手机点击 使用配对码配对设备。在电脑终端中执行 ```adb pair IP:Port```，执行后，输入手机上的六位配对码即可配对。
    
-   ⚠️注意，电脑与手机必须处于同一网络下，配对IP与配对端口显示在点击 使用配对码配对设备 后的弹窗里。(配对成功后，手机已配对的设备中会多出一个设备选项)
+    ⚠️注意，电脑与手机必须处于同一网络下，配对IP与配对端口显示在点击 使用配对码配对设备 后的弹窗里。(配对成功后，手机已配对的设备中会多出一个设备选项)
 4. 连接：电脑终端执行```adb connect IP:Port```连接手机。执行```adb devices```即可查看所有设备。
 
 ### 文件操作
 
-1. 确定一下目标文件位置，经过查找，发现路径在```/sdcard/Android/data/com.dragonli.projectsnow.lhm/files/localization.txt```
+1. 确定一下目标文件位置，经过查找，发现路径在
+
+    ```/sdcard/Android/data/com.dragonli.projectsnow.lhm/files/localization.txt```。
+
+    可以终端执行
+
+    ```adb shell cat /sdcard/Android/data/com.dragonli.projectsnow.lhm/files/localization.txt```
+    
+    查看文件内容，内容应该为
+    
+    ```localization = 0```，
+    
+    我们的目标就是将0改为1。
+
+2. 下载文件
+
+    大概率，这个文件没有权限直接修改，所以将文件下载至本机，修改后再推送回设备覆盖。
+
+    adb 的 pull 命令可以从安卓设备下载文件到本机。
+
+    使用```adb pull /sdcard/Android/data/com.dragonli.projectsnow.lhm/files/localization.txt ~/Desktop```将安卓设备上 的文件拉取到电脑上，这里是下载到了桌面路径。
+
+3. 修改文件
+
+    文本文件下载到本机，修改就很容易了，使用可视化的文本编辑器/终端工具都可以。修改文本内容中的0为1。
+
+4. 推送文件
+
+    将修改后的文本文件推送回原位置就可以了。
+
+    adb 的 push 命令可以将本机设备推送到安卓设备上。
+
+    使用```adb push ~/Desktop/localization.txt /sdcard/Android/data/com.dragonli.projectsnow.lhm/files/```覆盖原文件即可。
+    注意，在我的设备上没有出现无法覆盖，位置没有权限的情况，如果你的设备出现了类似问题导致文件覆盖失败，可以考虑推送到```/sdcard/```，再通过安卓设备上的文件管理应用操作，将文本移动到目标位置，难度降低。
+
+5. 验证结果
+
+    使用安卓设备上的相关应用查看文本内容正常。
+
+    启动游戏，就可以发现“小开关”生效了。
+
+    成功🎉
