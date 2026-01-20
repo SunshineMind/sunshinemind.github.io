@@ -1,8 +1,8 @@
 ---
 date: '2026-01-15T23:56:18+08:00'
-draft: true
+draft: false
 title: '奇怪的修复 Unity WebGL 打包失败方法'
-lastmod: 2026-01-21T00:40:00+08:00
+lastmod: 2026-01-21T00:51:00+08:00
 
 categories:
 - Unity
@@ -13,7 +13,7 @@ tags:
 - 构建失败
 ---
 
-先说结论，关闭了XMP解决了Unity构建WebGL失败的问题，但我没有理解原因。
+>先说结论，关闭了XMP解决了Unity构建WebGL失败的问题，但我没有理解原因。
 
 
 昨晚尝试在公司的电脑上使用Unity 6000.0.40f1 上构建一个WebGL应用失败。
@@ -70,3 +70,5 @@ EditorApplication:Internal_CallDelayFunctions ()
 成了！
 
 我不懂但我大受震撼.png
+
+就这样吧，没察觉到关掉或开启XMP对我的开发的影响，就这样一直关着吧，等我有机会了解“真相”再说吧😂。
