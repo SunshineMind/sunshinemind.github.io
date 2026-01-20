@@ -32,8 +32,8 @@ params:
       url: "https://steamcommunity.com/profiles/76561198273672327/"
     - name: "LINUX DO"
       url: "https://linux.do/u/selfishpanzer/summary/"
-    - name: "IDC Flare"
-      url: "https://idcflare.com/u/geek/summary/"
+    # - name: "IDC Flare"
+    #   url: "https://idcflare.com/u/geek/summary/"
 
   busuanzi:
     enable: true
