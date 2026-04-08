@@ -1,7 +1,7 @@
-baseURL: https://sunshinemind.github.io/
+baseURL: https://ubug.cc/
 languageCode: zh
 defaultContentLanguage: zh
-title: SmJx's Blog
+title: uBug Blog
 theme: ["PaperMod"]
 
 caches:
@@ -21,7 +21,7 @@ params:
 
   homeInfoParams:
     Title: Hi there
-    Content: 热爱但懒惰的全不栈开发，如果博客对你有帮助，十分荣幸
+    Content: 自认为是热爱但懒惰的全不栈开发，如果博客对你有帮助，十分荣幸
 
   socialIcons: # optional
     - name: "email"
