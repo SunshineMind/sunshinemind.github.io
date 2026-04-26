@@ -24,16 +24,10 @@ params:
     Content: 自认为是热爱但懒惰的全不栈开发，如果博客对你有帮助，十分荣幸
 
   socialIcons: # optional
-    - name: "email"
-      url: "mailto:geek@linux.do"
     - name: "github"
       url: "https://github.com/SunshineMind/"
     - name: "steam"
       url: "https://steamcommunity.com/profiles/76561198273672327/"
-    - name: "LINUX DO"
-      url: "https://linux.do/u/selfishpanzer/summary/"
-    # - name: "IDC Flare"
-    #   url: "https://idcflare.com/u/geek/summary/"
 
   busuanzi:
     enable: true
