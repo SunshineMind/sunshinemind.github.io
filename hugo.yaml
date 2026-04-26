@@ -58,10 +58,10 @@ menu:
       name: 归档
       url: /archives/
       weight: 40
-    # - identifier: aboutme
-    #   name: 关于我
-    #   url: /aboutme/
-    #   weight: 50
+    - identifier: aboutme
+      name: 关于我
+      url: /aboutme/
+      weight: 50
 
 markup:
   goldmark:
