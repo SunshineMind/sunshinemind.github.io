@@ -1,7 +1,6 @@
 {{- define "main" }}
 
 <header class="page-header moments-header">
-  {{- partial "breadcrumbs.html" . }}
   <h1>
     {{ .Title }}
     {{- if and (eq .Kind `section`) (.Param "ShowRssButtonInSectionTermList") }}
