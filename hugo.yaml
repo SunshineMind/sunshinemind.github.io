@@ -3,6 +3,7 @@ locale: zh
 defaultContentLanguage: zh
 title: uBug Blog
 theme: ["PaperMod"]
+enableGitInfo: true
 
 caches:
   images:
@@ -39,6 +40,17 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+frontmatter:
+  lastmod:
+    - :git
+    - :fileModTime
+    - lastmod
+    - modified
+    - date
+    - publishdate
+    - pubdate
+    - published
 
 menu:
   main:

@@ -55,6 +55,12 @@
     color: var(--secondary);
 }
 
+.moment-updated {
+    margin: -4px 0 10px;
+    font-size: 0.88rem;
+    color: var(--secondary);
+}
+
 .moment-date a,
 .moment-title a {
     color: inherit;

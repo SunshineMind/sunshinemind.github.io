@@ -10,11 +10,12 @@
     <h1 class="post-title">
       {{- if $hasCustomTitle }}{{ .Title }}{{ else }}{{ $defaultTitle }}{{ end -}}
     </h1>
-    {{- if $hasCustomTitle }}
     <div class="post-meta moment-meta">
       <span title="{{ .Date }}">{{ $defaultTitle }}</span>
+      {{- if and (.Param "ShowLastMod") (not .Lastmod.IsZero) (ne .Lastmod.Unix .Date.Unix) }}
+      <span>&nbsp;·&nbsp;更新于 {{ .Lastmod | time.Format (default ":date_long" site.Params.DateFormat) }}</span>
+      {{- end }}
     </div>
-    {{- end }}
   </header>
 
   {{- if .Content }}
