@@ -9,5 +9,3 @@ cascade:
   comments: false
   hideAuthor: true
 ---
-
-这里分享一些短内容。
