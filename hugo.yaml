@@ -1,5 +1,5 @@
 baseURL: https://ubug.cc/
-languageCode: zh
+locale: zh
 defaultContentLanguage: zh
 title: uBug Blog
 theme: ["PaperMod"]
@@ -46,6 +46,10 @@ menu:
       name: 搜索
       url: /search/
       weight: 10
+    - identifier: moments
+      name: 片刻
+      url: /moments/
+      weight: 15
     - identifier: categories
       name: 类别
       url: /categories/

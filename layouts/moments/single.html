@@ -1,0 +1,42 @@
+{{- define "main" }}
+
+{{- $defaultTitle := .Date | time.Format "2006-01-02 15:04" }}
+{{- $hasCustomTitle := and .Title (ne .Title $defaultTitle) }}
+
+<article class="post-single moment-single">
+  <header class="post-header moment-single-header">
+    {{ partial "breadcrumbs.html" . }}
+    <p class="moment-kicker">片刻</p>
+    <h1 class="post-title">
+      {{- if $hasCustomTitle }}{{ .Title }}{{ else }}{{ $defaultTitle }}{{ end -}}
+    </h1>
+    {{- if $hasCustomTitle }}
+    <div class="post-meta moment-meta">
+      <span title="{{ .Date }}">{{ $defaultTitle }}</span>
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content moment-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer moment-footer">
+    {{- with (.GetTerms "tags") }}
+    <ul class="post-tags">
+      {{- range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- with .CurrentSection }}
+    <a class="moment-backlink" href="{{ .RelPermalink }}">返回{{ .Title }}</a>
+    {{- end }}
+  </footer>
+</article>
+
+{{- end }}
