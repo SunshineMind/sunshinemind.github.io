@@ -1,8 +1,14 @@
 ---
 title: "片刻"
-description: "生活、技术和一闪而过的念头，尽量只说两三句。"
+description: "随便说说。"
+
+build:
+  render: always
 
 cascade:
+  build:
+    list: local
+    render: never
   ShowReadingTime: false
   ShowToc: false
   ShowPostNavLinks: false

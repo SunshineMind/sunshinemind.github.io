@@ -1,0 +1,14 @@
+#menu a[href$="/moments/"] {
+    position: relative;
+}
+
+#menu a[href$="/moments/"]::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: calc(var(--gap) / -2);
+    top: 50%;
+    width: 1px;
+    height: 18px;
+    background: var(--secondary);
+    transform: translateY(-50%);
+}

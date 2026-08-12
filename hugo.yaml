@@ -10,6 +10,8 @@ caches:
     dir: :cacheDir/images
 
 params:
+  mainSections:
+    - posts
   defaultTheme: auto
   dateFormat: "2006-01-02"
   author: Jason
@@ -25,6 +27,8 @@ params:
     Content: 自认为是热爱但懒惰的全不栈开发，如果博客对你有帮助，十分荣幸
 
   socialIcons: # optional
+    - name: "email"
+      url: "mailto:contact@ubug.cc"
     - name: "github"
       url: "https://github.com/SunshineMind/"
     - name: "steam"
@@ -60,8 +64,9 @@ menu:
       weight: 10
     - identifier: moments
       name: 片刻
+      pre: "💭 "
       url: /moments/
-      weight: 15
+      weight: 60
     - identifier: categories
       name: 类别
       url: /categories/
