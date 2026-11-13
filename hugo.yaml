@@ -24,7 +24,7 @@ params:
 
   homeInfoParams:
     Title: Hi there
-    Content: 自认为是热爱但懒惰的全不栈开发，如果博客对你有帮助，十分荣幸
+    Content: 自认为是热爱但懒惰的全不栈开发，会随便分享点什么乱七八糟的东西。如果你喜欢这里的内容或对你有帮助，十分荣幸。
 
   socialIcons: # optional
     - name: "email"
